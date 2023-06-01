@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 30px;
+  padding: 10px 20px 10px 20px;
+  font-size: 18px;
+  background: #06bcee;
+}
+.list {
+  display: flex;
+  justify-content: start;
+}
+.list li:not(:last-child) {
+  margin-right: 10px;
+}
+.link {
+  text-decoration: none;
+}

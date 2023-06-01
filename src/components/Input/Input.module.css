@@ -1,4 +1,9 @@
 .input {
-  padding: 5px 20px;
+  padding: 8px 25px;
+  font-size: 18px;
   color: black;
+  border: none;
+}
+.input:focus {
+  outline: 2px solid #06bcee;
 }

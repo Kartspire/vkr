@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import styles from "./Solver.module.css";
+import "../../main.global.css";
 
 const Solver = () => {
   const [a, setA] = useState("");
@@ -26,20 +27,43 @@ const Solver = () => {
   };
 
   return (
-    <div>
-      <div>Ax² + Bx + C = 0</div>
-      <form
-        className={styles.form}
-        action=""
-        onSubmit={(e) => solveEquation(e)}
-      >
-        <Input value={a} onChange={(e) => setA(e.target.value)} paramName="A" />
-        <Input value={b} onChange={(e) => setB(e.target.value)} paramName="B" />
-        <Input value={c} onChange={(e) => setC(e.target.value)} paramName="C" />
-        <Button label="Рассчитать" />
-      </form>
-
-      <div className={styles.answer}>{solution}</div>
+    <div className="container">
+      <h1>Работа с квадратными уравнениями</h1>
+      <div className={styles.equation}>
+        <div>
+          <h3>Введите параметры уравнения</h3>
+          <form
+            className={styles.form}
+            action=""
+            onSubmit={(e) => solveEquation(e)}
+          >
+            <Input
+              value={a}
+              onChange={(e) => setA(e.target.value)}
+              paramName="A"
+            />
+            <Input
+              value={b}
+              onChange={(e) => setB(e.target.value)}
+              paramName="B"
+            />
+            <Input
+              value={c}
+              onChange={(e) => setC(e.target.value)}
+              paramName="C"
+            />
+            <Button label="Рассчитать" />
+          </form>
+        </div>
+        <div>
+          <h3>Формат уравнения</h3>
+          <p>Ax² + Bx + C = 0</p>
+        </div>
+        <div>
+          <h3>Результат</h3>
+          <div className={styles.answer}>{solution}</div>
+        </div>
+      </div>
     </div>
   );
 };
